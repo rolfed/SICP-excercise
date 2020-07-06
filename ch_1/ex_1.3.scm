@@ -20,4 +20,5 @@
 
 (largestSumOfSquare 1 2 3)
 (largestSumOfSquare 3 2 1)
+(largestSumOfSqaures 1 1 2)
 
