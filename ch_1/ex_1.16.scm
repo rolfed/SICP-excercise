@@ -35,6 +35,10 @@
     (if (= counter 0)
       product
       (if (even? counter)
+        ; even
         (fast-iter (square b) (/ counter 2) product)
-        (fast-iter b (- counter 1) (* product b)))))
+        ; odd
+        (else (fast-iter b (- counter 1) (* product b))))))
 (fast-iter b n 1))
+
+(fast-expt 2 2)
