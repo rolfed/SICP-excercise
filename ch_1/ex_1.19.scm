@@ -29,6 +29,14 @@
 ; NOTE: (fib-iter (+ a b) a (- count 1)))
 ; (fib-iter (+ 1 0) 1 (- 5 1))
 ; (fib-iter 1 1 4)
+; (fib-iter (+ 1 1) 1 (- 4 1))
+; (fib 2 1 3)
+; (fib (+ 2 1) 2 (- 3 1))
+; (fib 3 2 2)
+; (fib (+ 3 2) 3 (- 2 1))
+; (fib 5 3 1)
+; (fib (+ 5 3) 5 (- 1 1))
+; (fib 8 5 0) ANSWER is 5
 
 
 (define (fib n)
@@ -39,12 +47,12 @@
     ((even? count)
     (fib-iter a 
               b
-              p ; compute p
-              q ; computer q
+              p ; transformation p <- p^2 + q^2 
+              q ; transformation 2pq + q^2
 
               (/ count 2)))
-    (else (fib-iter (+ (* b q) (* a q) (* a p))
-                    (+ (* b p) (* a q))
+    (else (fib-iter (+ (* b q) (* a q) (* a p)) ; transformation a <- bq + aq + ap
+                    (+ (* b p) (* a q)) ; transformation b <- bp + aq
                     p
                     q
                     (- count 1)))))
