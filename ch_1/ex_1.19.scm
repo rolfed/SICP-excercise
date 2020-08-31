@@ -24,6 +24,12 @@
 ; (fib-iter (+ 2 1) 2 (- 1 1))
 ; (fib-iter 3 2 0) ANSWER is 2
 
+; (fib 5)
+; NOTE: (fib-iter a b count)
+; NOTE: (fib-iter (+ a b) a (- count 1)))
+; (fib-iter (+ 1 0) 1 (- 5 1))
+; (fib-iter 1 1 4)
+
 
 (define (fib n)
   (fib-iter 1 0 0 1 n))
